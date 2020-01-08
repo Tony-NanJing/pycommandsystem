@@ -1,0 +1,30 @@
+#!python3
+#-*-coding:UTF-8-*-
+#PYCS install
+import os,pygame
+print('PYCS Eagle 0.0.3 install!')
+pygame.init()
+pygame.mixer.init()
+pygame.mixer.music.load('./pycs/res/clouds.mid')
+pygame.mixer.music.set_volume(1)
+pygame.mixer.music.play(-1)
+print('Writing pth.res')
+f = open('pycs/pth.res', 'w')
+f.write('C:/Program Files/pycs')
+f.close()
+print('Copying files...')
+os.system('md "C:\\Program Files\\pycs"')
+os.system('md "C:\\Program Files\\pycs\\res"')
+os.system('md "C:\\Program Files\\pycs\\softwares"')
+os.system('copy pycs\\* "C:\\Program Files\\pycs"')
+os.system('copy pycs\\res\\* "C:\\Program Files\\pycs\\res"')
+os.system('copy pycs\\softwares\\* "C:\\Program Files\\pycs\\softwares"')
+print('Installing Python3.4.3...')
+os.system('py3.4ins.msi')
+print('Installing modules')
+os.system('pip install pygame')
+os.system('pip install pyautogui')
+print('Stopping pygame...')
+pygame.quit()
+print('done.')
+
