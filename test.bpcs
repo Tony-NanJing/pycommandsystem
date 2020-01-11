@@ -1,7 +1,0 @@
-lf
-cd res
-lf
-bk
-ex pycstest
-lf
-dl gmon.out
